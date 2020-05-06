@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+
 import {MatMenuModule} from '@angular/material/menu';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
@@ -7,7 +8,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import {MatStepperModule} from '@angular/material/stepper';
 
-const menuComponents = [
+
+const noteComponents = [
   MatButtonModule,
   MatInputModule,
   MatMenuModule,
@@ -19,7 +21,8 @@ const menuComponents = [
 ];
 
 @NgModule({
-  imports: [menuComponents],
-  exports: [menuComponents]
+  imports: [noteComponents],
+  exports: [noteComponents]
+
 })
-export class UserModule { }
+export class NoteModule { }

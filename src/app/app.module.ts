@@ -4,10 +4,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuComponent } from './menu/menu.component';
-import { UserModule } from './user/user.module';
-import { NoteModule } from './note/note.module';
-
+import { NoteModule } from './user/user.module';
 import { UserNoteComponent } from './user-note/user-note.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MenuRoutingModule } from './menu/menu-routing.module';
+import { MenuNoteModule } from './menu-note/menu-note.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,10 +21,13 @@ import { UserNoteComponent } from './user-note/user-note.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    UserModule,
-    NoteModule
+    MenuNoteModule,
+    NoteModule,
+    HttpClientModule,
+    MenuRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

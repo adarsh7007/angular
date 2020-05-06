@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { NgForm, FormBuilder } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { User } from '../user';
 
 @Component({
   selector: 'app-menu',
@@ -10,10 +12,13 @@ import { NgForm, FormBuilder } from '@angular/forms';
 
 })
 export class MenuComponent implements OnInit {
+  user$: Observable<User[]>;
+  constructor(private userService: UserService) {}
 
-  constructor( ) {}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.user$ = this.userService.getusers();
   }
+
+
 
 }

@@ -47,7 +47,7 @@
 
 
 
-<div class="container">
+<!-- <div class="container">
   <form id="contact">
     <fieldset>
       <input placeholder="tittle" type="text" tabindex="1" required autofocus>
@@ -59,4 +59,18 @@
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
     </fieldset>
   </form>
+</div> -->
+<ul class="user" *ngIf="user$ | async as user">
+  <li *ngFor="let user">
+    <h4>{{ user.title }}</h4>
+    <h5>{{ user.description }} </h5>
+  </li>
+</ul>
+
+<div class="user" *ngIf="user$ | async as user">
+  <div *ngFor="let user of user">
+    <label>tittle:</label><input type="text" name="tittle " {{user.title}} />
+    <label>description:</label><textarea placeholder="description...."{{user.description}></textarea>
 </div>
+</div>
+
